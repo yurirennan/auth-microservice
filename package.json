@@ -6,10 +6,21 @@
   "author": "Yuri Silva",
   "license": "MIT",
   "scripts": {
+    "dev": "yarn ts-node-dev --respawn --transpile-only --ignore-watch node_modules --no-notify src/index.ts",
     "build": "yarn tsc -p ."
   },
   "devDependencies": {
+    "@types/express": "^4.17.13",
+    "@types/jsonwebtoken": "^8.5.5",
     "@types/node": "^16.9.4",
+    "@types/pg": "^8.6.1",
+    "ts-node-dev": "^1.1.8",
     "typescript": "^4.4.3"
+  },
+  "dependencies": {
+    "express": "^4.17.1",
+    "express-async-errors": "^3.1.1",
+    "jsonwebtoken": "^8.5.1",
+    "pg": "^8.7.1"
   }
 }
