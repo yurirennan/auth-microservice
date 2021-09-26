@@ -1,11 +1,12 @@
 import express from 'express';
 import 'express-async-errors';
 
-import { ErrorHandler } from './middlewares/ErrorHandler';
-
-import statusRoutes from './routes/status.route';
 import usersRoutes from './routes/users.route';
+import statusRoutes from './routes/status.route';
 import authorizationRoutes from './routes/authorization.route';
+
+import { ErrorHandler } from './middlewares/ErrorHandler';
+import { BearerAuth } from './middlewares/BearerAuth';
 
 const app = express();
 
@@ -15,7 +16,7 @@ app.use(express.json());
 app.use(express.urlencoded( { extended: true }));
 
 app.use(statusRoutes);
-app.use(usersRoutes);
+app.use(BearerAuth, usersRoutes);
 app.use(authorizationRoutes);
 app.use(ErrorHandler)
 

@@ -2,7 +2,7 @@ export class AuthError {
   public readonly message: string;
   public readonly statusCode: number;
 
-  constructor(message: string, statusCode = 400) {
+  constructor(message: string, statusCode = 401) {
     this.message = message;
     this.statusCode = statusCode;
   }

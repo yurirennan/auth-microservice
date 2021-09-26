@@ -12,17 +12,17 @@ class AuthController {
     if(!request.user) {
       throw new AuthError("Athentication Error", 401);
     }
-    
+
     const { id, username } = request.user;
 
     //playload, secret, options
-    const jwtToken = jwt.sign({
+    const token = jwt.sign({
       user_username: username,
     }, 'd0ceeeeb5db4d037b98549b729b4fd42', {
       subject: id,
     })
 
-    return response.json({ token: jwtToken});
+    return response.json({ token });
   }
 }
 
