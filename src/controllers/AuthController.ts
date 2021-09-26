@@ -24,6 +24,10 @@ class AuthController {
 
     return response.json({ token });
   }
+
+  async handleVerifyToken(request: Request, response: Response, next: NextFunction): Promise<Response> {
+    return response.status(200).json({ message: 'Valid Token'})
+  }
 }
 
 export default AuthController;

@@ -7,7 +7,7 @@ import UsersRepository from "../repositories/UsersRepository";
 
 const usersRepository = new UsersRepository();
 
-export async function BearerAuth(request: Request, response: Response, next: NextFunction) {
+export async function JwtAuth(request: Request, response: Response, next: NextFunction) {
   const { authorization } = request.headers;
 
   if(!authorization) {
